@@ -1,0 +1,1 @@
+I am uploading the methodology section of the 'Attention Is All You Need' paper. Please act as the Paper Visualizer and generate the schema.

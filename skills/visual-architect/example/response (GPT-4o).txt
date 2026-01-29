@@ -1,0 +1,72 @@
+---BEGIN PROMPT---
+
+[Style & Meta-Instructions]
+High-fidelity scientific schematic, technical vector illustration, clean white background, distinct boundaries, academic textbook style. High resolution 4k, strictly 2D flat design with subtle isometric elements.
+
+**[TEXT RENDERING RULES]**
+
+* **Typography**: Use bold, sans-serif font (e.g., Helvetica/Roboto style) for maximum legibility.
+* **Hierarchy**: Prioritize correct spelling for MAIN HEADERS (Zone Titles). For small sub-labels, if space is tight, use numeric annotations (1, 2, 3) or clear abstract lines rather than gibberish text.
+* **Contrast**: Text must be dark grey/black on light backgrounds. Avoid overlapping text on complex textures.
+
+[LAYOUT CONFIGURATION]
+
+* **Selected Layout**: Parallel Dual-Stream (Two vertical stacks: Encoder ←→ Decoder) with a central attention/detail panel.
+* **Composition Logic**: Left column = Encoder stack (N repeated encoder blocks). Right column = Decoder stack (N repeated decoder blocks). Center strip (thin vertical panel) shows expanded view of attention mechanisms (Scaled Dot-Product + Multi-Head composition) and positional encoding merge. Top-left input panel flows into encoder; bottom-right output projection exits decoder. Residual connections are shown as short bypass ribbons; masking displayed as semi-opaque overlay on attention matrices.
+* **Color Palette**: Professional Pastel (Azure Blue for encoder elements, Slate Grey for text/frames, Coral Orange for decoder highlights, Mint Green for attention matrices and head indicators, Soft Gold for residual ribbons).
+
+[ZONE 1: TOP-LEFT - INPUT & EMBEDDING]
+
+* **Container**: Small rectangular panel with rounded corners, top-left corner of the composition.
+* **Visual Structure**: A vertical stack of 3 realistic paper/doc icons labeled with tokens → a label "Token IDs". To the right of the stack, an isometric rectangular block labelled "Embedding matrix (E)" composed visually of small colored tiles (rows = tokens, columns = embedding dims). Above the embedding block, a thin ribbon labeled "Add Positional Encoding" that merges a smaller horizontal sinusoidal waveform icon into the embedding block.
+* **Key Text Labels**: "Input Tokens", "Embedding (xE)", "Positional Encoding (PE)".
+
+[ZONE 2: LEFT-COLUMN CENTER - ENCODER STACK]
+
+* **Container**: Tall vertical column of 6 identical rounded square blocks stacked top→bottom (representing N encoder layers). Each block is visually subdivided into three horizontal segments.
+* **Visual Structure (per encoder block)**:
+
+  * Top segment: "Multi-Head Self-Attention" depicted as a matrix icon (small grid) with 8 parallel translucent mini-grids above it labeled "Head 1 ... Head 8". A small concatenation arrow collects the heads into a single long thin block labeled "Linear proj".
+  * Middle segment: "Add & Norm" represented by a curved bypass ribbon (residual) returning around the attention block into a circular "LayerNorm" icon.
+  * Bottom segment: "Position-wise Feed-Forward (FFN)" shown as a pair of stacked dense-layer blocks with an activation symbol (triangle) between them, then another Add & Norm ribbon + LayerNorm icon.
+* **Key Text Labels**: On the column header "Encoder Stack (N × EncoderBlock)" and inside blocks: "Self-Attn", "Add & Norm", "FFN", "LayerNorm".
+
+[ZONE 3: RIGHT-COLUMN CENTER - DECODER STACK]
+
+* **Container**: Tall vertical column of 6 identical rounded square blocks stacked top→bottom (mirroring encoder height), placed to the right with equal spacing.
+* **Visual Structure (per decoder block)**:
+
+  * Top segment: "Masked Multi-Head Self-Attention" — same multi-head grid as encoder but with a semi-opaque triangular mask overlay across the matrix (top-right shaded) and a small "mask" padlock icon at the corner to indicate causal masking.
+  * Middle segment: "Encoder-Decoder (Cross) Multi-Head Attention" — visualized as a pair of parallel matrices with a double-headed arrow between Decoder-query matrix and Encoder-key/value matrix; multi-head tiles above and concatenation below as in encoder.
+  * Bottom segment: "Position-wise Feed-Forward (FFN)" + Add & Norm ribbons identical to encoder blocks.
+* **Key Text Labels**: On the column header "Decoder Stack (N × DecoderBlock)" and inside blocks: "Masked Self-Attn", "Cross-Attn (Enc→Dec)", "FFN", "Add & Norm".
+
+[ZONE 4: CENTER STRIP - ATTENTION DETAIL PANEL]
+
+* **Container**: Narrow vertical strip centered between encoder & decoder columns, aligned mid-height.
+* **Visual Structure**:
+
+  * **Top area**: "Scaled Dot-Product Attention" exploded view: three labeled matrices Q, K, V (Q•K^T → scale → softmax → ×V). Show the dot-product with a multiplication symbol between Q and K^T, a small scale divisor '√d_k' tag, and a softmax funnel icon producing attention weights.
+  * **Middle area**: "Multi-Head Composition" — show 4–8 small attention-weight matrices (heads) laid side-by-side, arrows merging into a concat block, then a projection linear block labeled "W^O".
+  * **Bottom area**: "Masking Visual" — a matrix with upper-right triangle shaded and a legend: "Mask = -∞ → zeroed weights".
+* **Key Text Labels**: "Scaled Dot-Product Attn", "softmax", "concat(heads) → W^O", "mask (causal)".
+
+[ZONE 5: BOTTOM-RIGHT - OUTPUT PROJECTION & SOFTMAX]
+
+* **Container**: Rectangular panel near the bottom-right corner.
+* **Visual Structure**: A narrow linear block labelled "Decoder Top Layer Output (d_model)". To its right a thin matrix labeled "Linear projection (W_out)" feeding into a tall narrow "Softmax" column (vertical bars representing probabilities). Above the Softmax, small token icons appear as predicted tokens.
+* **Key Text Labels**: "Linear + Softmax", "Predicted token distribution".
+
+[CONNECTIONS]
+
+1. Solid wide arrow from ZONE 1 (Embedding) → top of ZONE 2 (Encoder Stack first block) labeled "Embedded inputs (x + PE) → Encoder".
+2. Vertical solid arrows connecting each encoder block to the next (top→bottom) labeled with "Layer × i" markers.
+3. Solid horizontal arrows from each encoder block's output to the center strip's Cross-Attn input when depicted (thin lines from each encoder block to the 'K/V' side of Zone 4) labeled "Key/Value (K,V) stream".
+4. Solid horizontal arrows from the decoder blocks' Query side to the center strip's Q input labeled "Query (Q) from Decoder".
+5. Solid arrow from center strip (post-W^O) back into decoder middle segment of each decoder block labeled "Attention output → add & norm".
+6. Dotted curved ribbons that bypass attention/FFN modules inside both encoder and decoder blocks to represent residual connections, each labeled "Residual (skip) → Add".
+7. Semi-opaque triangular overlay on the decoder masked self-attention matrix; a short explanatory callout arrow labeled "Causal mask (prevents access to future tokens)".
+8. Final solid arrow from top of ZONE 3 (Decoder top output) → ZONE 5 (Linear + Softmax) labeled "Decoder output → projection".
+9. Small legend box at bottom-left listing icons used: Matrix = attention map, Stack = repeated layers, Ribbon = residual, Padlock = mask, Wave = positional encoding.
+
+---END PROMPT---
