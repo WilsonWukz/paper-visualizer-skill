@@ -1,14 +1,14 @@
 # Paper Visualizer (MCP Skill)
 
 > **Turn ArXiv Papers into High-Fidelity Technical Schematics.**
-> A specialized MCP (Model Context Protocol) skill that architects professional diagrams for research papers, optimized for Nano Banana.
+> A specialized MCP (Model Context Protocol) skill that architects professional diagrams for research papers, optimized for Midjourney v6 & DALL-E 3.
 
-![Hero Demo](skills/visual-architect/example/demo%20(Attention%20Is%20All%20You%20Need-method).jpeg)
-*Figure 1: Transformer Architecture generated purely from the original paper's text using this skill.*
+![Hero Demo](skills/visual-architect/example/Anthropic_Console.jpg)
+*Figure 1: Transformer Architecture generated via Anthropic Console (Claude 3.5 Sonnet) using this skill. Note the precise "Multi-Head Attention" detail insets.*
 
 ## Why use this?
 
-Researchers and Engineers spend hours drawing diagrams in PowerPoint/Visio. Generative AI (DALL-E/Midjourney) usually fails at scientific logic, creating "hallucinated" structures.
+Researchers and Engineers spend hours drawing diagrams in PowerPoint/Visio. Generative AI usually fails at scientific logic, creating "hallucinated" structures.
 
 **Paper Visualizer** solves this by acting as a **"Structural Architect"**:
 1.  **Analyzes Logic**: Reads the paper (PDF/Text) and identifies the topology (e.g., Linear Pipeline, Cyclic Loop, Parallel Stream).
@@ -23,29 +23,32 @@ Researchers and Engineers spend hours drawing diagrams in PowerPoint/Visio. Gene
 
 ## Installation & Usage
 
-### Option 1: Use with Claude Desktop / Cursor (Manual)
-1.  Locate the core skill file: `skills/visual-architect/SKILL.md`.
+### Option 1: Manual Integration (Claude Desktop / Cursor)
+1.  Locate the core skill file: [`skills/visual-architect/SKILL.md`](skills/visual-architect/SKILL.md).
 2.  Add it to your Project Knowledge or System Instructions.
 3.  **Trigger**: "Generate a visual schema for this paper's methodology."
 
-### Option 2: MCP Server Integration
-This repository is structured as an MCP collection. You can point your MCP client to the `skills/visual-architect` directory to load this specific capability.
+### Option 2: MCP Integration
+This repository is structured as an MCP collection. You can point your MCP client to the `skills/visual-architect` directory.
 
-## Gallery: Before & After
+## Benchmark & Validation
+
+We strictly evaluate this skill across different environments to ensure robustness.
 
 ### Case Study: "Attention Is All You Need" (Transformer)
 
-**Step 1: Input**
-> "I am uploading the methodology section of the 'Attention Is All You Need' paper. Generate the schema."
-> *(See original input: [skills/visual-architect/example/test prompt.txt](skills/visual-architect/example/test%20prompt.txt))*
+**Input Context:**
+> User uploaded the methodology section of the Transformer paper.
+> *(See input: [skills/visual-architect/example/test prompt.txt](skills/visual-architect/example/test%20prompt.txt))*
 
-**Step 2: AI Architect Output (The Intermediate Prompt)**
-The skill automatically selected the **Parallel Dual-Stream Layout** (Encoder vs Decoder).
-*View the full generated prompt log:* [skills/visual-architect/example/response (GPT-4o).txt](skills/visual-architect/example/response%20(GPT-4o).txt)
+**Benchmark Results:**
 
-**Step 3: Final Render (Midjourney v6)**
-![Architecture Variant](skills/visual-architect/example/demo%20(Attention%20Is%20All%20You%20Need-method).jpeg)
-*Note the precise separation of the Encoder Stack (Left) and Decoder Stack (Right), connected by the Cross-Attention mechanism.*
+| Environment | Model | Log Output | Result Image |
+| :--- | :--- | :--- | :--- |
+| **Anthropic Console** | Claude 3.5 Sonnet | [View Log](skills/visual-architect/example/response%20(Anthropic_Console).txt) | **[See Hero Image]** |
+| **ChatGPT Web** | GPT-4o | [View Log](skills/visual-architect/example/response%20(GPT_4o_web).txt) | [View Result](skills/visual-architect/example/GPT_4o_web.jpeg) |
+
+*The Anthropic Console run demonstrated superior adherence to the "Detail Inset" instructions (Zone 7 & 8).*
 
 ## Prompting Guide (How it works)
 
@@ -58,3 +61,10 @@ This skill forces the LLM to output a structured JSON-like Markdown block:
 
 [ZONE 1: INPUT]
 * Visual Structure: A stack of 3 realistic paper icons...
+...
+
+```
+
+## License
+
+MIT License. Copyright (c) 2026 WilsonWukz.
