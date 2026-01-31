@@ -618,17 +618,15 @@
                     </div>
                     <span>Installation & Usage</span>
                 </div>
-                <pre class="code-block"><span class="comment"># Option 1: Manual Integration (Claude Desktop / Cursor)</span>
-<span class="comment"># Download the core skill file and add to your Project Knowledge</span>
+                <pre class="code-block"><span class="comment"># Step 1: Download the skill file</span>
 <span class="function">curl</span> -O <span class="string">https://raw.githubusercontent.com/WilsonWukz/paper-visualizer-skill/main/skills/visual-architect/SKILL.md</span>
 
-<span class="comment"># Then trigger in your AI assistant:</span>
-<span class="string">"Generate a visual schema for this paper's methodology."</span>
+<span class="comment"># Step 2: Add SKILL.md to your AI assistant</span>
+<span class="comment"># → Claude Desktop: Project Knowledge</span>
+<span class="comment"># → Cursor: System Instructions</span>
 
-<span class="comment"># Option 2: MCP Integration</span>
-<span class="comment"># Point your MCP client to the skill directory:</span>
-<span class="function">git clone</span> <span class="string">https://github.com/WilsonWukz/paper-visualizer-skill.git</span>
-<span class="comment"># Configure MCP to load: skills/visual-architect</span></pre>
+<span class="comment"># Step 3: Trigger with your paper</span>
+<span class="string">"Generate a visual schema for this paper's methodology."</span></pre>
             </div>
         </div>
     </section>

@@ -1,7 +1,7 @@
-# Paper Visualizer (MCP Skill)
+# Paper Visualizer (Anthropic Skill)
 
 > **Turn ArXiv Papers into High-Fidelity Technical Schematics.**
-> A specialized MCP (Model Context Protocol) skill that architects professional diagrams for research papers, optimized for Nano Banana Pro.
+> A specialized Anthropic Skill that architects professional diagrams for research papers, optimized for Nano Banana Pro.
 
 🌐 **Official Website**: [https://wilsonwukz.github.io/paper-visualizer-skill/](https://wilsonwukz.github.io/paper-visualizer-skill/)
 
@@ -65,13 +65,10 @@ We strictly evaluate this skill across different environments to ensure robustne
 
 ## Installation & Usage
 
-### Option 1: Manual Integration (Claude Desktop / Cursor)
+### How to Use
 1.  Download the core skill file: [`skills/visual-architect/SKILL.md`](skills/visual-architect/SKILL.md).
-2.  Add it to your **Project Knowledge** or **System Instructions**.
+2.  Add it to your **Project Knowledge** (Claude Desktop / Cursor) or **System Instructions**.
 3.  **Trigger**: "Generate a visual schema for this paper's methodology."
-
-### Option 2: MCP Integration
-This repository is structured as an MCP collection. You can point your MCP client to the `skills/visual-architect` directory to load this specific capability.
 
 ## How It Works (The Prompt Engineering)
 
