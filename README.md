@@ -3,6 +3,8 @@
 > **Turn ArXiv Papers into High-Fidelity Technical Schematics.**
 > A specialized MCP (Model Context Protocol) skill that architects professional diagrams for research papers, optimized for Nano Banana Pro.
 
+🌐 **Official Website**: [https://wilsonwukz.github.io/paper-visualizer-skill/](https://wilsonwukz.github.io/paper-visualizer-skill/)
+
 ---
 
 <div align="center">
