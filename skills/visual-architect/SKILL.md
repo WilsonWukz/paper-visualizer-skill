@@ -1,7 +1,9 @@
 ---
 name: paper-visualizer
 description: Transform research papers into professional visual schemas. Analyzes paper logic, selects optimal layout patterns, and generates detailed prompts for AI image generation.
+homepage: https://github.com/WilsonWukz/paper-visualizer-skill
 ---
+
 
 # Paper Visualizer Skill
 
